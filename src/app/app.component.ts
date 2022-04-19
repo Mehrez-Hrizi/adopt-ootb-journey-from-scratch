@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LayoutService } from '@backbase/ui-ang/layout';
 
+import { OAuthService } from 'angular-oauth2-oidc';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +11,7 @@ import { LayoutService } from '@backbase/ui-ang/layout';
 export class AppComponent {
   isAuthenticated = false;
 
-  constructor(public layoutService: LayoutService) {
+  constructor(private oAuthService: OAuthService, public layoutService: LayoutService) {
+    this.isAuthenticated = oAuthService.hasValidAccessToken();
   }
 }
