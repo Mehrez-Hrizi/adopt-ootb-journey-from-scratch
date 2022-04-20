@@ -15,6 +15,8 @@ import { ACCESS_CONTROL_BASE_PATH } from '@backbase/data-ang/accesscontrol';
 
 import { AuthGuard } from './guards/auth.guard';
 
+import { ARRANGEMENT_MANAGER_BASE_PATH } from '@backbase/data-ang/arrangements';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -52,6 +54,10 @@ import { AuthGuard } from './guards/auth.guard';
       useValue: `${environment.apiRoot}/access-control`
     },
     AuthGuard,
+    {
+      provide: ARRANGEMENT_MANAGER_BASE_PATH,
+      useValue: environment.apiRoot+'/arrangement-manager'
+    },
   ],
   bootstrap: [AppComponent]
 })

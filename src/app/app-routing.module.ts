@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'login', loadChildren: () => import('./login/login.module').then((m)=>m.LoginModule)
   },
   {
+    path: 'account-transaction',
+    loadChildren: () => import('./account-transaction/account-transaction-bundle.module').then((m)=>m.AccountTransactionBundleModule)
+  },
+  {
     path: 'select-context',
     loadChildren: () => import('./user-context/user-context.module').then((m) => m.UserContextModule)
   },
