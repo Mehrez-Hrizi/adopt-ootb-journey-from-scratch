@@ -5,7 +5,8 @@
 import { AuthConfig } from "angular-oauth2-oidc";
 
 export const environment = {
-  production: false
+  production: false,
+  apiRoot: '/api'
 };
 
 /*

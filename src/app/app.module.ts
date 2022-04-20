@@ -9,7 +9,7 @@ import { LayoutModule, LogoModule } from '@backbase/ui-ang';
 import { OAuthModule, AuthConfig, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 
-import { authConfig } from 'src/environments/environment';
+import { authConfig, environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,12 @@ import { authConfig } from 'src/environments/environment';
     AppRoutingModule,
     LayoutModule,
     LogoModule,
-    OAuthModule.forRoot(),
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: [environment.apiRoot],
+        sendAccessToken: true
+      }
+    }),
     HttpClientModule
   ],
   providers: [
