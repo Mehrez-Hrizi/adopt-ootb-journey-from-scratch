@@ -13,6 +13,8 @@ import { authConfig, environment } from 'src/environments/environment';
 
 import { ACCESS_CONTROL_BASE_PATH } from '@backbase/data-ang/accesscontrol';
 
+import { AuthGuard } from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -48,7 +50,8 @@ import { ACCESS_CONTROL_BASE_PATH } from '@backbase/data-ang/accesscontrol';
     {
       provide: ACCESS_CONTROL_BASE_PATH,
       useValue: `${environment.apiRoot}/access-control`
-    }
+    },
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
