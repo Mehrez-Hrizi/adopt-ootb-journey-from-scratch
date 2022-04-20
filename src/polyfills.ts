@@ -55,3 +55,11 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/**
+ * TODO: Remove this line
+ *       Current behaviour:
+ *       The select-context-widget requires a global reloadPage function that returns
+ *       a Promise before executing an "spa:" navigation on context selection success.
+ */
+ (window as any).reloadPage = () => Promise.resolve();

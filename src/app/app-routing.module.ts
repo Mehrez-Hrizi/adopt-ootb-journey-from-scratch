@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'login', loadChildren: () => import('./login/login.module').then((m)=>m.LoginModule)
   },
   {
+    path: 'select-context',
+    loadChildren: () => import('./user-context/user-context.module').then((m) => m.UserContextModule)
+  },
+  {
     path: '**',
     redirectTo: 'login'
   }

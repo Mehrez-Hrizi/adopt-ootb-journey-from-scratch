@@ -23,7 +23,7 @@ export const authConfig: AuthConfig = {
   // Url of the Identity Provider
   issuer: 'https://identity.prd.sdbx.live.backbaseservices.com/auth/realms/retail',
   // URL of the SPA to redirect the user to after login
-  redirectUri: document.location.origin + '/',
+  redirectUri: document.location.origin + '/select-context',
   // The SPA's id. The SPA is registered with this id at the auth-server
   clientId: 'bb-web-client',
   // Just needed if your auth server demands a secret. In general, this

@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { authConfig, environment } from 'src/environments/environment';
 
+import { ACCESS_CONTROL_BASE_PATH } from '@backbase/data-ang/accesscontrol';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -43,6 +45,10 @@ import { authConfig, environment } from 'src/environments/environment';
         )
     },
     { provide: OAuthStorage, useFactory: () => localStorage },
+    {
+      provide: ACCESS_CONTROL_BASE_PATH,
+      useValue: `${environment.apiRoot}/access-control`
+    }
   ],
   bootstrap: [AppComponent]
 })
